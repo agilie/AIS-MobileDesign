@@ -11,6 +11,8 @@
           $stateProvider
               .state('dashboard', {
                   url: '/',
+                  controller: 'DashboardController',
+                  controllerAs: 'vm',
                   templateUrl: 'app/dashboard/dashboard.html'
               })
               .state('collections', {
@@ -19,6 +21,8 @@
               })
               .state('shot', {
                   url: '/shots/:id',
+                  controller: 'ShotController',
+                  controllerAs: 'vm',
                   templateUrl: 'app/shots/shot.html'
               });
       });
