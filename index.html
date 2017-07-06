@@ -12,28 +12,33 @@
 <body ng-app="app">
 <div class="container-fluid">
 
-    <div class="row" style="background-color: lightblue;">
-        <div class="col-xs-6 text-right">
-            <a ui-sref="dashboard">Dashboard</a>
+    <app-header>
+        <div class="col-xs-1">
+            <img width="50" src="http://shmector.com/_ph/1/349279667.jpg" alt="Logo">
         </div>
-        <div class="col-xs-6">
-            <a ui-sref="collections">Collections</a>
-        </div>
-    </div>
+    </app-header>
 
     <ui-view></ui-view>
+
+    <app-header>
+        <div class="col-xs-1">
+            <a href="mailto:web@agilie.com">Contact us</a>
+        </div>
+    </app-header>
 
 
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.js"></script>
 
 <script src="app/app.core.js"></script>
 <script src="app/routing.js"></script>
 <script src="app/models/shots.model.js"></script>
 <script src="app/dashboard/dashboard.controller.js"></script>
 <script src="app/shots/shot.controller.js"></script>
+<script src="app/directives/header.directive.js"></script>
+<script src="app/directives/shot.directive.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.6.5/angular-resource.js"></script>
 </body>
 </html>

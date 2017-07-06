@@ -1,8 +1,4 @@
-<div style="display: inline-block; padding: 10px;" ng-repeat="shot in vm.model.shotResponse.shots">
-    <img ng-src="{{shot.thumbnail}}"
-         ui-sref="shot({id: shot.id})"
-
-         width="200" alt="Shot thumbnail">
-    <br>
-    <h5>{{shot.id}} - {{shot.title}}</h5>
+<div style="display: inline-block; padding: 10px;"
+     ng-repeat="shot in vm.model.shotResponse.shots">
+    <app-shot shot="shot"></app-shot>
 </div>
