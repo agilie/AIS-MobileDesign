@@ -12,16 +12,12 @@
         let vm = this;
 
         vm.model = {
-            shots: []
+            shotResponse: ShotModel.api.get()
         };
 
-        activate();
+        ShotModel.api.checkDuplicate({image_url: 'http://dev-api.mobile.design/uploads/shots/606cc34c173533f93ee79d556b1fc556a9e32226.?1498474673'})
+            .$promise.then((response) => console.log(response));
 
-        function activate() {
-            ShotModel.getAll().then(
-                response => vm.model.shots = response.data.shots
-            )
-        }
     }
 
 })();

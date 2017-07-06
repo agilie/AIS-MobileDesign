@@ -12,16 +12,9 @@
         let vm = this;
 
         vm.model = {
-            shot: {}
+            shot: ShotModel.api.get({id: $stateParams.id})
         };
 
-        activate();
-
-        function activate() {
-            ShotModel.getOne($stateParams.id).then(
-                response => vm.model.shot = response.data
-            )
-        }
     }
 
 })();

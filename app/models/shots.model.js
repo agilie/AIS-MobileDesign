@@ -6,22 +6,19 @@
         .module("app")
         .factory("ShotModel", ShotModel);
 
-    ShotModel.$inject = ['$http'];
+    ShotModel.$inject = ['$resource'];
 
-    function ShotModel($http) {
+    function ShotModel($resource) {
         
         let shots = {
-            getAll: getAll,
-            getOne: getOne
+            api: $resource('http://dev-api.mobile.design/api/shots/:id', {id: '@id'}, {
+                updateMyFavoriteResource: {method: 'PUT'},
+                checkDuplicate: {
+                    method: 'GET',
+                    url: 'http://dev-api.mobile.design/api/shots/check_duplicate'
+                }
+            })
         };
-
-        function getAll() {
-            return $http.get('http://dev-api.mobile.design/api/shots')
-        }
-
-        function getOne(id) {
-            return $http.get(`http://dev-api.mobile.design/api/shots/${id}`)
-        }
 
         return shots;
 
