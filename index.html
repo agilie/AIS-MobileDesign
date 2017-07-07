@@ -40,5 +40,19 @@
 <script src="app/directives/header.directive.js"></script>
 <script src="app/directives/shot.directive.js"></script>
 
+<script type="text/ng-template" id="header">
+    <div class="row" style="background-color: lightblue;">
+
+        <ng-transclude></ng-transclude>
+
+        <div class="col-xs-5 text-right">
+            <a ui-sref="dashboard">Dashboard</a>
+        </div>
+        <div class="col-xs-6">
+            <a ui-sref="collections">Collections</a>
+        </div>
+    </div>
+</script>
+
 </body>
 </html>
