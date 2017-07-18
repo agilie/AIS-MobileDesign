@@ -1,0 +1,25 @@
+{
+  "name": "ais-mobiledesign",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "echo 'Starting Static Server'",
+    "start": "static-server -n index.html -p 3000",
+    "poststart": "echo 'Closing Static Server'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agilie/AIS-MobileDesign.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agilie/AIS-MobileDesign/issues"
+  },
+  "homepage": "https://github.com/agilie/AIS-MobileDesign#readme",
+  "dependencies": {
+    "angular": "~1.6.5"
+  }
+}

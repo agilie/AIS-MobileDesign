@@ -9,3 +9,4 @@ out
 gen
 
 .DS_Store
+node_modules/
