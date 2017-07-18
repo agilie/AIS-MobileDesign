@@ -10,3 +10,10 @@ gulp.task('vet', function() {
         .pipe(jscs())
         .pipe(jscs.reporter());
 });
+
+gulp.task('build_js', function() {
+    return gulp.src(['app/**/*.module.js', 'app/**/*.js'])
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('dist/'));
+
+});

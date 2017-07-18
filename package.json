@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prestart": "echo 'Starting Static Server'",
+    "prestart": "gulp build_js",
     "start": "static-server -n index.html -p 3000",
     "poststart": "echo 'Closing Static Server'",
     "test": "echo \"Error: no test specified\" && exit 1"
