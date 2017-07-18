@@ -9,7 +9,7 @@
               restrict: 'E',
               transclude: true,
               templateUrl: "header"
-          }
+          };
       })
 
 })();
