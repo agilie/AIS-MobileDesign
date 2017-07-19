@@ -15,5 +15,8 @@ gulp.task('build_js', function() {
     return gulp.src(['app/**/*.module.js', 'app/**/*.js'])
         .pipe(concat('app.js'))
         .pipe(gulp.dest('dist/'));
+});
 
+gulp.task('watcher', function() {
+    return gulp.watch('app/**/*.js', ['build_js']);
 });
