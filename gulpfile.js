@@ -1,8 +1,13 @@
 const gulp = require('gulp');
-const jshint = require('gulp-jshint');
-const jscs = require('gulp-jscs');
 const concat = require('gulp-concat');
 const del = require('del');
+const runSequence = require('run-sequence');
+
+const $ = require('gulp-load-plugins')();
+
+gulp.task('build', function(done) {
+    runSequence(['clean', 'vet'], 'build_js', 'watcher', done);
+});
 
 gulp.task('clean', function (callback) {
     del(['dist']).then(() => { callback() });
@@ -10,10 +15,10 @@ gulp.task('clean', function (callback) {
 
 gulp.task('vet', function() {
     return gulp.src('app/**/*.js')
-        .pipe(jshint({esversion: 6}))
-        .pipe(jshint.reporter('default'))
-        .pipe(jscs())
-        .pipe(jscs.reporter());
+        .pipe($.jshint({esversion: 6}))
+        .pipe($.jshint.reporter('default'))
+        .pipe($.jscs())
+        .pipe($.jscs.reporter());
 });
 
 gulp.task('build_js', function() {
