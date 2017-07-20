@@ -1,0 +1,24 @@
+{
+  "name": "ais-mobiledesign",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "SergeyMell <sergey.mell@agilie.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/agilie/AIS-MobileDesign",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "^1.6.5",
+    "angular-ui-router": "^1.0.5",
+    "owl.carousel": "^2.2.1",
+    "angular": "^1.6.5",
+    "jquery": "^3.2.1"
+  }
+}
