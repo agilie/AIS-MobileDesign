@@ -9,6 +9,24 @@ gulp.task('build', function(done) {
     runSequence(['clean', 'vet'], 'build_js', 'watcher', done);
 });
 
+gulp.task('cool-build', ['copy-templates'], function() {
+
+    const source = gulp.src(['app/**/*.module.js', 'app/**/*.js', 'app/**/*.css'], {read: false});
+
+    return gulp.src('index.html')
+
+        .pipe($.inject(source))
+        .pipe($.wiredep())
+        .pipe($.useref())
+
+        .pipe(gulp.dest('./dist'));
+});
+
+gulp.task('copy-templates', function() {
+    return gulp.src('app/**/*.html')
+        .pipe(gulp.dest('./dist/app'));
+});
+
 gulp.task('clean', function (callback) {
     del(['dist']).then(() => { callback() });
 });
