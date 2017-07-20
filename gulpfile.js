@@ -2,6 +2,11 @@ const gulp = require('gulp');
 const jshint = require('gulp-jshint');
 const jscs = require('gulp-jscs');
 const concat = require('gulp-concat');
+const del = require('del');
+
+gulp.task('clean', function (callback) {
+    del(['dist']).then(() => { callback() });
+});
 
 gulp.task('vet', function() {
     return gulp.src('app/**/*.js')
