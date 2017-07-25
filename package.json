@@ -7,7 +7,8 @@
     "prestart": "gulp build_js",
     "start": "static-server -n index.html -p 3000",
     "poststart": "echo 'Closing Static Server'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "browserify": "browserify vendor_app.js -o vendor_dist.js"
   },
   "repository": {
     "type": "git",
@@ -20,10 +21,15 @@
   },
   "homepage": "https://github.com/agilie/AIS-MobileDesign#readme",
   "dependencies": {
-    "angular": "~1.6.5"
+    "angular": "^1.6.5",
+    "angular-resource": "^1.6.5",
+    "angular-ui-router": "^1.0.3",
+    "jquery": "^3.2.1",
+    "owl.carousel": "^2.2.0"
   },
   "devDependencies": {
     "browser-sync": "^2.18.13",
+    "browserify": "^14.4.0",
     "connect-history-api-fallback": "^1.3.0",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
