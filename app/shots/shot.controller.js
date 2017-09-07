@@ -9,7 +9,7 @@
     ShotController.$inject = ['ShotModel', '$stateParams'];
 
     function ShotController(ShotModel, $stateParams) {
-        let vm = this;
+        var vm = this;
 
         vm.model = {
             shot: ShotModel.api.get({id: $stateParams.id})

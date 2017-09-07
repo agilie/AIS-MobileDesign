@@ -10,7 +10,7 @@
 
     function ShotModel($resource) {
         
-        let shots = {
+        var shots = {
             api: $resource('http://dev-api.mobile.design/api/shots/:id', {id: '@id'}, {
                 updateMyFavoriteResource: {method: 'PUT'},
                 checkDuplicate: {
